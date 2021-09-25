@@ -7,7 +7,7 @@ import os
 def main():
     host_name = get_env_variable('DNS_HOST_NAME', 'Desired DNS hostname must be supplied in an environment variable called DNS_HOST_NAME')
     cf_token = get_env_variable('CF_TOKEN', 'CloudFlare token must be supplied in an environment variable called CF_TOKEN')
-    cf = CloudFlare.CloudFlare(cf_token)
+    cf = CloudFlare.CloudFlare(token=cf_token)
     current_ip = get_public_ip()
     cf_dns_zone_id = get_cf_dns_zone_id(cf, host_name)
     cf_dns_record = get_cf_dns_record(cf, cf_dns_zone_id, host_name)

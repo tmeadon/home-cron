@@ -1,8 +1,12 @@
 FROM python:3.6.12-alpine3.12
 
-COPY . .
+WORKDIR /app
 
-# RUN pip install -r requirements.txt
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY . . 
 
 RUN crontab crontab
 
