@@ -61,7 +61,7 @@ def get_ip_from_cf_dns(dns_record: object) -> ipaddress.IPv4Address:
 
 def update_cf_if_required(cf: CloudFlare.CloudFlare, zone_id: str, dns_record: object, current_ip: ipaddress.IPv4Address):
     current_dns_ip = get_ip_from_cf_dns(dns_record)
-    if (current_ip != current_ip):
+    if (current_dns_ip != current_ip):
         update_dns_record(cf, zone_id, dns_record, current_ip)
     else:
         log('No update required')
