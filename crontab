@@ -1,1 +1,1 @@
-*/1 * * * * python -u /app/update-home-dns.py
+0 * * * * python -u /app/update-home-dns.py
